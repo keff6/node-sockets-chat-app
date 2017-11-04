@@ -1,39 +1,58 @@
-// Establish new connection
-var socket = io.connect('http://192.168.1.3:4040',{'forceNew':true});
+(function(doc) {
+  let UI_messagesBox = doc.getElementById('messages'),
+      UI_nickname = doc.getElementById('nickname'),
+      UI_messageText = doc.getElementById('text'),
+      UI_inputForm = doc.getElementById('user-input'),
+      serverUrl = 'http://192.168.1.3:4040';
+  
+  // Establish new connection
+  let socket = io.connect(serverUrl, {
+    'forceNew': true
+  });
 
-// Receive welcome message from the server
-socket.on('messages', function(data){
-  console.log(data);
-  render(data);
-});
+  // Receive welcome message from the server
+  socket.on('messages', function (data) {
+    console.log(data);
+    render(data);
+  });
 
-// Display messages
-function render(data){
-  var html = data.map(function(message, index){
-    return (`
+  // Display messages
+  function render(data) {
+    let html = data.map(function (message, index) {
+      return (`
             <div class="message">
               <strong>${message.nickname} says:</strong>
               <p>${message.text}</p>
             </div>
           `);
-  }).join(' ');
-  
-  document.getElementById('messages').innerHTML = html;
-  
-  document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
-}
+    }).join(' ');
 
-// Add message
-function addMessage(e){
-  var message = {
-    nickname: document.getElementById('nickname').value,
-    text: document.getElementById('text').value
-  };
+    UI_messagesBox.innerHTML = html;
+
+    UI_messagesBox.scrollTop = UI_messagesBox.scrollHeight;
+  }
+
+  // Add message
+  function addMessage(e) {   
+    
+    //Stop reloading the page
+    e.preventDefault();
+    
+    let message = {
+      nickname: UI_nickname.value,
+      text: UI_messageText.value
+    };    
+
+    // Disabling nickname edition after first message
+    UI_nickname.disabled = true;
+
+    // Emit event to the server
+    socket.emit('add-message', message);
+
+    return false;
+  }
   
-  document.getElementById('nickname').style.display = 'none';
+  // Event listeners
+  UI_inputForm.addEventListener('submit', addMessage);  
   
-  // Emit event to the server
-  socket.emit('add-message', message);
-  
-  return false;
-}
+})(document);

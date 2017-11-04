@@ -1,10 +1,10 @@
-var express = require('express');
-var app = express();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+let express = require('express'),
+    app = express(),
+    server = require('http').Server(app),
+    io = require('socket.io')(server);
 
 // Messages Store Array
-var messages = [{
+let messages = [{
   id:1,
   text: "Welcome to the chat!",
   nickname: 'admin'
