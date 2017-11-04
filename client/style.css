@@ -1,0 +1,13 @@
+#messages{
+  width:95%;
+  max-width: 400px;
+  height: 350px;
+  overflow-y: scroll;
+  border: 1px #ccc solid;
+}
+
+.message{
+  margin:20px;
+  padding: 5px;
+  border: 1px #ccc solid; 
+}
