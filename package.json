@@ -4,13 +4,15 @@
   "description": "Small chat app using node.js and socket.io",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "lessc client/style.less > client/style.css && nodemon server/index.js",
+    "compile-styles": "lessc style.less > client/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kevin Fallas",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "less": "^2.7.3",
     "socket.io": "^2.0.4"
   },
   "devDependencies": {
