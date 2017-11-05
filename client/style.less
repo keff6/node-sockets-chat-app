@@ -1,10 +1,11 @@
+/*--------- Variables -----------*/
 @main-green: #a3f820;
 @dark-text: #2d4848;
 
 * {
   margin: 0;
   padding: 0;
-  font-family: Verdana, Helvetica sans-serif;
+  font-family: 'Nunito', Helvetica sans-serif;
   color: #fff;
 }
 body {
@@ -48,6 +49,32 @@ h1 {
 .row {
   display: inline-flex;
 }
+
+/*--------------- Title bar ------------------*/
+
+.title-bar{
+  width:100%;
+  
+  h1{
+    width: 70%;
+    float:left;
+    text-align: left;
+    padding-left: 2rem;
+  }
+  button{
+    width:15%;
+    float:right;
+    border:none;
+    background: none;
+    
+    img{
+      height: 25px;
+      margin-top: 7px;
+    }
+  }
+}
+
+
 /* -------------------------------------------*/
 /*    Messages Box Styles                     */
 /* -------------------------------------------*/
@@ -126,6 +153,11 @@ h1 {
     background-color: rgba(201, 239, 216, 0.95);
   }
   
+  input[type="text"]:disabled{
+    background: none;
+    color:@main-green;
+  }
+  
   .btn-send {
     width: 10%;
     margin: 5px 0px 0px 5px;
@@ -170,6 +202,7 @@ h1 {
 .row:last-of-type {
   margin-bottom: 5px;
 }
+
 /* ---------- scrollbar ----------- */
 .scrollbar {
   float: right;
@@ -191,6 +224,72 @@ h1 {
   background-color: #004161;
   background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(@main-green), to(#19911D), color-stop(0.6, #54DE5D));
 }
+
+/* -------------------------------------------*/
+/*    Modal Styles                            */
+/* -------------------------------------------*/
+#modal-about {
+   visibility: hidden;
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   width:100%;
+   height:100%;
+   text-align:center;
+   z-index: 1000;
+   background-image: url('./img/transparent-bg.png');
+   
+  h2{
+    text-align:center;
+    margin-bottom: 50px;
+  }
+  
+  div {
+    text-align:left;
+    width: 300px;
+    margin: 35px auto;
+    background-color: #c0c8d6;
+    border: 2px solid cadetblue;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    height: 70%;
+    position:relative;
+    
+    > *{
+      color:#03447c;
+    }
+    
+    .author-name{
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    
+    p{
+      text-align: left;
+      padding-top: 10px;
+      color: #03447c;
+      
+      strong{
+        color: #4e8e90;
+      }
+    }
+    
+    #btn-close-modal{
+      background: none;
+      border: none;
+      position: absolute;
+      right: 140px;
+      bottom: 20px;
+
+      img{
+        height: 50px;
+        }
+    } 
+  }   
+}
+
 /* --------------- Mobile Devices ------------- */
 @media (max-width: 976px) {
   .container {

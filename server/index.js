@@ -4,11 +4,7 @@ let express = require('express'),
     io = require('socket.io')(server);
 
 // Messages Store Array
-let messages = [{
-  id:1,
-  text: "Welcome to the chat!",
-  nickname: 'bot'
-}];
+let messages = [];
 
 // Express middleware
 app.use(express.static('client'));

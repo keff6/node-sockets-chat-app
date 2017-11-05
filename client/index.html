@@ -5,26 +5,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link rel="stylesheet" href="./vendor/animate.css">
   <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
 <body>
   <div class="container">
-    <h1>Chat room</h1>
+    <div class="title-bar">
+      <h1>Chat room</h1>
+      <button id="btn-info">
+          <img src="img/info-icon.png" alt="About">
+     </button>
+    </div>
+
     <div id="messages" class="scrollbar skinny-green"></div>
 
     <div class="user-input">
       <form id="input-form">
-      <input id="nickname" type="text" placeholder="Nickname (10 characters max)" maxlength="10" required> 
-      <div class="row">
-        <textarea name="" id="text" cols="30" rows="10" placeholder="You say..."></textarea>        
-        <button type="submit" class="btn-send">
+        <input id="nickname" type="text" placeholder="Nickname (10 characters max)" maxlength="10" required>
+        <div class="row">
+          <textarea name="" id="text" cols="30" rows="10" placeholder="You say..."></textarea>
+          <button type="submit" class="btn-send">
           <img src="img/send-icon.svg" alt="Send">
         </button>
-      </div>       
-    </form>
-    </div>    
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal dialog -->
+  <div id="modal-about">
+
+    <div>
+      <h2>About Me</h2>
+      <p class="author-name">Kevin Fallas Chinchilla</p>
+      <p><strong>Email: </strong><a href="mailto:kev.fallas@gmail.com">kev.fallas@gmail.com</a></p>
+      <p><strong>LinkedIn: </strong><a href="https://cr.linkedin.com/in/kevin-fallas-chinchilla-13494064">kevin-fallas-chinchilla-13494064</a> </p>
+
+      <button id="btn-close-modal">
+        <img src="img/close-icon.png" alt="Close">
+      </button>
+    </div>
+
   </div>
 
   <!-- SCRIPTS -->
