@@ -11,11 +11,11 @@
 <body>
   <div class="container">
     <h1>Chat room</h1>
-    <div id="messages"></div>
+    <div id="messages" class="scrollbar style-15"></div>
 
     <div class="user-input">
       <form id="input-form">
-      <input id="nickname" type="text" placeholder="Nickname"> 
+      <input id="nickname" type="text" placeholder="Nickname (10 characters max)" maxlength="10" required> 
       <div class="row">
         <textarea name="" id="text" cols="30" rows="10" placeholder="You say..."></textarea>        
         <button type="submit" class="btn-send">

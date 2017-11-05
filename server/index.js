@@ -7,7 +7,7 @@ let express = require('express'),
 let messages = [{
   id:1,
   text: "Welcome to the chat!",
-  nickname: 'admin'
+  nickname: 'bot'
 }];
 
 // Express middleware

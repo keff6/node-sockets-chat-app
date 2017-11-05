@@ -3,7 +3,7 @@
       UI_nickname = doc.getElementById('nickname'),
       UI_messageText = doc.getElementById('text'),
       UI_inputForm = doc.getElementById('input-form'),
-      serverUrl = 'http://192.168.1.3:4040';
+      serverUrl = 'http://192.168.1.2:4040';
   
   // Establish new connection
   let socket = io.connect(serverUrl, {
