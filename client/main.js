@@ -17,13 +17,14 @@
 
   // Display messages
   function render(data) {
+    let countMessages = data.length;
     let html = data.map(function (message, index) {
       return (`
             <div class="message row">
               <div class="name-tag">
                 ${message.nickname}:
               </div>
-              <div class="text-globe left-arrow">
+              <div class="text-globe left-arrow ${countMessages === index+1 ? 'animated bounceInLeft':''} ">
                 ${message.text}
               </div>              
             </div>
