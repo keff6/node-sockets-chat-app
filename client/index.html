@@ -17,15 +17,14 @@
       <form id="input-form">
       <input id="nickname" type="text" placeholder="Nickname"> 
       <div class="row">
-        <textarea name="" id="text" cols="30" rows="10" placeholder="You say..."></textarea>
-      <input type="submit" value="Send" />
-      </div>    
-      
+        <textarea name="" id="text" cols="30" rows="10" placeholder="You say..."></textarea>        
+        <button type="submit" class="btn-send">
+          <img src="img/send-icon.svg" alt="Send">
+        </button>
+      </div>       
     </form>
-    </div>
-    
+    </div>    
   </div>
-
 
   <!-- SCRIPTS -->
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>

@@ -2,6 +2,19 @@
   margin: 0;
   padding: 0;
   font-family: Verdana, Helvetica sans-serif;
+  color: #fff;
+}
+
+body {
+
+  background: rgba(0, 65, 97, 1);
+  background: -moz-linear-gradient(45deg, rgba(0, 65, 97, 1) 0%, rgba(0, 53, 87, 1) 74%, rgba(0, 53, 87, 1) 89%, rgba(0, 53, 87, 1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(0, 65, 97, 1)), color-stop(74%, rgba(0, 53, 87, 1)), color-stop(89%, rgba(0, 53, 87, 1)), color-stop(100%, rgba(0, 53, 87, 1)));
+  background: -webkit-linear-gradient(45deg, rgba(0, 65, 97, 1) 0%, rgba(0, 53, 87, 1) 74%, rgba(0, 53, 87, 1) 89%, rgba(0, 53, 87, 1) 100%);
+  background: -o-linear-gradient(45deg, rgba(0, 65, 97, 1) 0%, rgba(0, 53, 87, 1) 74%, rgba(0, 53, 87, 1) 89%, rgba(0, 53, 87, 1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(0, 65, 97, 1) 0%, rgba(0, 53, 87, 1) 74%, rgba(0, 53, 87, 1) 89%, rgba(0, 53, 87, 1) 100%);
+  background: linear-gradient(45deg, rgba(0, 65, 97, 1) 0%, rgba(0, 53, 87, 1) 74%, rgba(0, 53, 87, 1) 89%, rgba(0, 53, 87, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004161', endColorstr='#003557', GradientType=1);
 }
 
 .container,
@@ -15,7 +28,6 @@ body {
 .container {
   width: 70%;
   margin: auto;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
 }
@@ -26,36 +38,156 @@ h1,
   flex: none;
 }
 
-#messages {
-  overflow-y: scroll;
-  border: 1px #ccc solid;
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  word-spacing: 0.75rem;
+  line-height: 40px;
+  color: #a3f820;
 }
 
+.row {
+  display: inline-flex;
+}
+
+/* -------------------------------------------*/
+/*    Messages Box Styles                     */
+/* -------------------------------------------*/
+
+#messages {
+  overflow-y: scroll;
+  border-top: 1px #ccc solid;
+  flex: 1;
+
+  /* Background */
+  background-image: url("img/bg.png");
+  border-radius: 5px;
+}
+
+.message {
+  width: 100%;
+}
+
+.message .name-tag {
+  width: 20%;
+  font-weight: bold;
+  padding: 10px 20px;
+  padding-right: 0;
+}
+
+.message .text-globe {
+  color: rgb(8, 37, 51);
+  border-bottom: 1px solid greenyellow;
+}
+
+/*-------  Message bubble -------*/
+
+.text-globe {
+  background-color: #F2F2F2;
+  border-radius: 5px;
+  box-shadow: 0 0 6px #B2B2B2;
+  display: inline-block;
+  padding: 10px 18px;
+  position: relative;
+  vertical-align: top;
+}
+
+.text-globe::before {
+  background-color: #F2F2F2;
+  content: "\00a0";
+  display: block;
+  height: 16px;
+  position: absolute;
+  top: 11px;
+  transform: rotate( 29deg) skew( -35deg);
+  -moz-transform: rotate( 29deg) skew( -35deg);
+  -ms-transform: rotate( 29deg) skew( -35deg);
+  -o-transform: rotate( 29deg) skew( -35deg);
+  -webkit-transform: rotate( 29deg) skew( -35deg);
+  width: 20px;
+}
+
+.left-arrow {
+  float: left;
+  margin: 5px 45px 5px 20px;
+}
+
+.left-arrow::before {
+  box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4);
+  left: -9px;
+}
+
+/* -------------------------------------------*/
+/*    Form Styles                             */
+/* -------------------------------------------*/
 
 #input-form {
   display: flex;
   flex-direction: column;
 }
 
-#input-form textarea{
-  width:90%;
-  
+#input-form input {
+  line-height: 25px;
+  font-size: 1.2rem;
+  border: none;
+  padding-left: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  color: darkslategray;
 }
 
-#input-form input[type="submit"]{
-  width:10%;
-  
+#input-form input[type="text"]:disabled {
+  background: rgba(35, 70, 167, 0);
+  color: #a3f820;
+  font-weight: bold;
 }
 
-.row{
-  display: inline-flex;
+#input-form .btn-send {
+  width: 10%;
+  margin: 5px 0px 0px 5px;
+  border-radius: 5px;
+  background-color: #a3f820;
+  color: darkslategray;
+  border: none;
+
+  -webkit-transition: background-color 0.5s;
+  /* For Safari 3.1 to 6.0 */
+  transition: background-color 0.5s;
 }
 
+#input-form .btn-send:hover {
+  background-color: rgba(33, 204, 33, 0.92);
+  color: darkslategray;
+}
+
+#input-form textarea {
+  height: 60px;
+  flex-basis: 90%;
+  padding: 5px 10px;
+  font-size: 1.05rem;
+  margin-top: 5px;
+  border-radius: 5px;
+  color: darkslategray;
+}
+
+#input-form .btn-send img {
+  height: 2.3rem;
+}
+
+#input-form .btn-send img:hover {
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.row:last-of-type {
+  margin-bottom: 5px;
+}
 
 /* Mobile Devices */
-
 @media(max-width:976px) {
-  .container {
-    width: 98%;
-  }
+  .container { width: 100%; }
+  #input-form textarea { flex-basis: 80%; }
+  #input-form .btn-send { flex-basis: 20%; }
 }

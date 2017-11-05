@@ -19,9 +19,13 @@
   function render(data) {
     let html = data.map(function (message, index) {
       return (`
-            <div class="message">
-              <strong>${message.nickname} says:</strong>
-              <p>${message.text}</p>
+            <div class="message row">
+              <div class="name-tag">
+                ${message.nickname}:
+              </div>
+              <div class="text-globe left-arrow">
+                ${message.text}
+              </div>              
             </div>
           `);
     }).join(' ');
