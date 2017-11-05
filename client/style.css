@@ -1,13 +1,61 @@
-#messages{
-  width:95%;
-  max-width: 400px;
-  height: 350px;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Helvetica sans-serif;
+}
+
+.container,
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 70%;
+  margin: auto;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+.user-input {
+  flex-basis: 100%;
+  flex: none;
+}
+
+#messages {
   overflow-y: scroll;
   border: 1px #ccc solid;
 }
 
-.message{
-  margin:20px;
-  padding: 5px;
-  border: 1px #ccc solid; 
+
+#input-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#input-form textarea{
+  width:90%;
+  
+}
+
+#input-form input[type="submit"]{
+  width:10%;
+  
+}
+
+.row{
+  display: inline-flex;
+}
+
+
+/* Mobile Devices */
+
+@media(max-width:976px) {
+  .container {
+    width: 98%;
+  }
 }

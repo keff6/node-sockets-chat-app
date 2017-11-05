@@ -9,15 +9,24 @@
 </head>
 
 <body>
-  <h1>Chat room</h1>
-  <div id="messages"></div>
-  
-  <form id="user-input">
-    <input id="nickname" type="text" placeholder="Nickname">
-    <textarea name="" id="text" cols="30" rows="10" placeholder="You say..."></textarea>
-    <input type="submit" value="Send" />
-  </form>
-  
+  <div class="container">
+    <h1>Chat room</h1>
+    <div id="messages"></div>
+
+    <div class="user-input">
+      <form id="input-form">
+      <input id="nickname" type="text" placeholder="Nickname"> 
+      <div class="row">
+        <textarea name="" id="text" cols="30" rows="10" placeholder="You say..."></textarea>
+      <input type="submit" value="Send" />
+      </div>    
+      
+    </form>
+    </div>
+    
+  </div>
+
+
   <!-- SCRIPTS -->
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
   <script type="text/javascript" src="main.js"></script>

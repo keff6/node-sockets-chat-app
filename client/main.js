@@ -2,7 +2,7 @@
   let UI_messagesBox = doc.getElementById('messages'),
       UI_nickname = doc.getElementById('nickname'),
       UI_messageText = doc.getElementById('text'),
-      UI_inputForm = doc.getElementById('user-input'),
+      UI_inputForm = doc.getElementById('input-form'),
       serverUrl = 'http://192.168.1.3:4040';
   
   // Establish new connection
@@ -11,8 +11,7 @@
   });
 
   // Receive welcome message from the server
-  socket.on('messages', function (data) {
-    console.log(data);
+  socket.on('messages', function (data) {    
     render(data);
   });
 
