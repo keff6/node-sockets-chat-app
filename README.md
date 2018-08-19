@@ -1,4 +1,6 @@
-# Chat app
+# Chat App
+
+## Description
 
 A chat application created using:
 
@@ -11,6 +13,7 @@ A chat application created using:
 * Flexbox layout
 * LESS
 * animate.css
+* nodemon
 
 ## Installation
 
